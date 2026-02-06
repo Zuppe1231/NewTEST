@@ -1,0 +1,10 @@
+{
+  "id": "meeting-transcriber",
+  "name": "Meeting Transcriber",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "WEB会議を録音してトランスクリプトをマークダウンファイルで作成するプラグイン",
+  "author": "Meeting Transcriber Team",
+  "authorUrl": "",
+  "isDesktopOnly": true
+}
