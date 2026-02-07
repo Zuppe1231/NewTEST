@@ -1,0 +1,18 @@
+# WEB会議録音・文字起こしプログラム 必要なパッケージ
+
+# 音声録音
+sounddevice>=0.4.6
+numpy>=1.24.0
+
+# 音声ファイル処理
+wave
+
+# 文字起こし（Whisper）
+openai-whisper>=20231117
+
+# Whisperの依存関係
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# その他のユーティリティ
+pathlib2>=2.3.7; python_version < '3.4'
