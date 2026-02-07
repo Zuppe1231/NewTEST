@@ -10,7 +10,6 @@ from pathlib import Path
 from typing import Optional
 
 import numpy as np
-import sounddevice as sd
 import soundfile as sf
 
 
@@ -36,7 +35,20 @@ class RecordingOutputs:
     info_txt: Path
 
 
+def _import_sounddevice():
+    try:
+        import sounddevice as sd  # type: ignore
+    except OSError as e:
+        # Linux等でPortAudioが未導入だと import 時点で落ちるため、メッセージを分かりやすくする
+        raise RuntimeError(
+            "録音機能を使うにはPortAudioが必要です。Windowsでは通常pipで動作しますが、"
+            "この環境ではPortAudioが見つからないため録音できません。"
+        ) from e
+    return sd
+
+
 def list_devices_human() -> str:
+    sd = _import_sounddevice()
     lines: list[str] = []
     lines.append("=== Devices (sounddevice) ===")
     hostapis = sd.query_hostapis()
@@ -64,6 +76,7 @@ def _ensure_dir(p: Path) -> None:
 
 
 def _default_output_device_index() -> int:
+    sd = _import_sounddevice()
     _in, out = sd.default.device
     if out is None or out < 0:
         raise RuntimeError("既定の出力デバイスを取得できませんでした。--system-device を指定してください。")
@@ -71,6 +84,7 @@ def _default_output_device_index() -> int:
 
 
 def _default_input_device_index() -> int:
+    sd = _import_sounddevice()
     inp, _out = sd.default.device
     if inp is None or inp < 0:
         raise RuntimeError("既定の入力デバイスを取得できませんでした。--mic-device を指定してください。")
@@ -115,6 +129,7 @@ class _WriterThread(threading.Thread):
 
 
 def record_audio(cfg: RecordingConfig) -> RecordingOutputs:
+    sd = _import_sounddevice()
     if not cfg.enable_system and not cfg.enable_mic:
         raise ValueError("enable_system と enable_mic の両方が無効です。")
 
@@ -161,7 +176,7 @@ def record_audio(cfg: RecordingConfig) -> RecordingOutputs:
 
     # 音声ストリーム開始
     writers: list[_WriterThread] = []
-    streams: list[sd.InputStream] = []
+    streams: list[object] = []
 
     def _make_callback(w: _WriterThread):
         def cb(indata, frames, time_info, status):  # noqa: ANN001
