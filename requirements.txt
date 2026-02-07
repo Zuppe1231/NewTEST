@@ -1,0 +1,20 @@
+# Windows WEB会議 録音 & トランスクリプト作成ツール 依存パッケージ
+#
+# インストール: pip install -r requirements.txt
+
+# 音声録音 (WASAPI ループバック対応)
+sounddevice>=0.4.6
+
+# 数値計算
+numpy>=1.24.0
+
+# 音声ファイル読み込み (--transcribe-only で使用)
+scipy>=1.10.0
+
+# OpenAI Whisper (ローカル文字起こしエンジン)
+openai-whisper>=20231117
+
+# Whisper が依存する PyTorch
+# ※ GPU を使う場合は https://pytorch.org/ から CUDA 版をインストールしてください
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+torch>=2.0.0
