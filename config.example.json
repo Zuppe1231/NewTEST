@@ -1,0 +1,30 @@
+{
+  "recording": {
+    "sample_rate": 16000,
+    "channels": 2,
+    "duration": null,
+    "device_id": null,
+    "output_directory": "recordings"
+  },
+  "transcription": {
+    "model": "base",
+    "language": "ja",
+    "task": "transcribe",
+    "temperature": 0,
+    "initial_prompt": null
+  },
+  "output": {
+    "audio_format": "wav",
+    "markdown_format": {
+      "include_metadata": true,
+      "include_timestamps": true,
+      "timestamp_format": "HH:MM:SS"
+    }
+  },
+  "advanced": {
+    "enable_logging": true,
+    "log_level": "INFO",
+    "auto_cleanup": false,
+    "max_recording_files": 100
+  }
+}

@@ -1,0 +1,54 @@
+MIT License
+
+Copyright (c) 2026 WEB会議録音・文字起こしプログラム
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## 使用しているライブラリのライセンス
+
+このプログラムは以下のオープンソースライブラリを使用しています：
+
+### OpenAI Whisper
+- ライセンス: MIT License
+- URL: https://github.com/openai/whisper
+
+### PyTorch
+- ライセンス: BSD-style License
+- URL: https://github.com/pytorch/pytorch
+
+### sounddevice
+- ライセンス: MIT License
+- URL: https://github.com/spatialaudio/python-sounddevice
+
+### NumPy
+- ライセンス: BSD License
+- URL: https://github.com/numpy/numpy
+
+---
+
+## 免責事項
+
+このソフトウェアは「現状のまま」提供され、明示的または黙示的な保証はありません。
+作者または著作権者は、ソフトウェアの使用またはその他の取引に起因する、
+いかなる請求、損害、その他の責任についても責任を負いません。
+
+録音および文字起こしの使用に際しては、該当する法律、規制、
+プライバシーポリシーを遵守してください。

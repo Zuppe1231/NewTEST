@@ -4,8 +4,9 @@ recordings/
 *.mp3
 *.m4a
 *.flac
-*.md
-!README.md
+
+# 生成されたトランスクリプトのみを除外（ドキュメントは含めない）
+# ドキュメントファイルは個別に管理
 
 # Pythonキャッシュ
 __pycache__/
