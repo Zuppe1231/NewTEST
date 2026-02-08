@@ -1,0 +1,11 @@
+# WEB会議 全音声録音ツール - 依存ライブラリ
+#
+# インストール: pip install -r requirements.txt
+
+# 必須ライブラリ
+numpy>=1.21.0
+sounddevice>=0.4.6
+soundfile>=0.12.1
+
+# オプション: MP3変換用 (ffmpegも別途インストールが必要)
+pydub>=0.25.1
